@@ -1,0 +1,55 @@
+metadata:
+  project: "Your Project Name"
+  created: "2025-01-01T00:00:00Z"
+  last_updated: "2025-01-01T00:00:00Z"
+  log_version: "1.0"
+
+# Running statistics (automatically updated)
+statistics:
+  # Last run metrics
+  last_run:
+    files_edited: 0
+    lines_added: 0
+    lines_deleted: 0
+    timestamp: null
+  
+  # Running average of last 5 cleanup cycles
+  running_average_last_5:
+    files_edited: 0.0
+    lines_added: 0.0
+    lines_deleted: 0.0
+    cycles_included: 0
+  
+  # Historical data for running average calculation
+  last_5_runs: []
+  
+  # Overall project statistics
+  totals:
+    total_agents_run: 0
+    total_duration: 0
+    total_lines_added: 0
+    total_lines_removed: 0
+    total_files_modified: 0
+    unique_files_touched: 0
+
+# Agent activity entries (populated automatically by scripts)
+activities: []
+  # Example structure:
+  # - timestamp: "2025-01-01T14:30:22Z"
+  #   agent: "developer"
+  #   agent_type: "implementation"
+  #   phase: "1"
+  #   task: "1.1.1"
+  #   instruction: "Implement feature X"
+  #   result: "Feature X completed successfully"
+  #   duration: 180
+  #   lines_added: 89
+  #   lines_removed: 12
+  #   files_modified: 2
+  #   artifacts: ["src/feature.py", "tests/test_feature.py"]
+  #   status: "success"
+  #   triggered_by: "orchestrator"
+  #   triggers: ["qa"]
+  #   percent_complete: 15.5
+  #   critical_path: true
+  #   notes: "Implementation notes here"
