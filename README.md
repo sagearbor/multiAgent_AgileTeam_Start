@@ -6,7 +6,7 @@
 
 This is a template repository for multi-agent software development using Claude Code's orchestration capabilities.
 
-## 🎯 Multi-Agent Architecture
+## ## Multi-Agent Architecture Multi-Agent Architecture
 
 This template includes 7 specialized agents:
 
@@ -18,7 +18,7 @@ This template includes 7 specialized agents:
 - **innovation** - Suggests new features and improvements
 - **cleanup** - Refactoring and technical debt management
 
-## 🚀 Quick Start
+## ## Quick Start Quick Start
 
 1. **Copy this template** to your new project directory
 2. **Update CLAUDE.md** with your project-specific instructions
@@ -39,7 +39,7 @@ python scripts/log-agent-activity.py --stats
 python scripts/generate-flowchart.py --condensed
 ```
 
-## 📊 Activity Tracking
+## ## Activity Tracking Activity Tracking
 
 All agent activities are tracked in YAML format with:
 - Running averages for cleanup optimization
@@ -47,40 +47,40 @@ All agent activities are tracked in YAML format with:
 - Mermaid flowchart generation
 - Terminal-friendly statistics
 
-## 📁 Template Structure
+## ## Template Structure Template Structure
 
 ```
-├── .claude/
-│   ├── commands/          # Agent command definitions
-│   └── settings.local.json
-├── logs/
-│   ├── agent-activity.yaml    # Main activity log
-│   └── *.py                   # Analysis scripts
-├── suggestions/
-│   ├── features.md            # Innovation agent output
-│   └── cleanup-tracker.yaml   # Cleanup tracking
-├── scripts/
-│   ├── log-agent-activity.py  # Activity logging
-│   ├── scan-codebase.py       # Codebase scanning
-│   └── generate-flowchart.py  # Mermaid generation
-└── docs/                      # Documentation
++-- .claude/
+|   +-- commands/          # Agent command definitions
+|   +-- settings.local.json
++-- logs/
+|   +-- agent-activity.yaml    # Main activity log
+|   +-- *.py                   # Analysis scripts
++-- suggestions/
+|   +-- features.md            # Innovation agent output
+|   +-- cleanup-tracker.yaml   # Cleanup tracking
++-- scripts/
+|   +-- log-agent-activity.py  # Activity logging
+|   +-- scan-codebase.py       # Codebase scanning
+|   +-- generate-flowchart.py  # Mermaid generation
++-- docs/                      # Documentation
 ```
 
-## 🔧 Customization
+## ## Customization Customization
 
 1. **Edit CLAUDE.md** - Add project-specific context and requirements
 2. **Update development_checklist.yaml** - Define your project phases
 3. **Configure agents** - Modify agent commands in `.claude/commands/`
 4. **Set thresholds** - Adjust cleanup and monitoring thresholds
 
-## 📈 Monitoring
+## ## Monitoring Monitoring
 
 - **Agent Activity**: View in `logs/agent-activity.yaml`
 - **Cleanup Status**: Track in `suggestions/cleanup-tracker.yaml`  
 - **Feature Suggestions**: Review in `suggestions/features.md`
 - **Flowcharts**: Generate with `scripts/generate-flowchart.py`
 
-## 🎨 Example Usage
+## ## Example Usage Example Usage
 
 ```bash
 # Log an agent activity
@@ -100,7 +100,7 @@ python scripts/scan-codebase.py
 python scripts/generate-flowchart.py --condensed --output workflow.mmd
 ```
 
-## 🤝 Contributing
+## ## Contributing Contributing
 
 This template is designed to evolve. Suggestions for new agents, improved tracking, or better visualization are welcome!
 

@@ -1,4 +1,4 @@
-# 🧹 Cleanup/Refactor Agent - Code Quality and Technical Debt Management
+# [CLEANUP] Cleanup/Refactor Agent - Code Quality and Technical Debt Management
 
 You are the Cleanup Agent, focused on code quality and technical debt management.
 

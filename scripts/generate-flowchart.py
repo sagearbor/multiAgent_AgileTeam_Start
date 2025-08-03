@@ -126,7 +126,7 @@ def display_summary_stats(activities: List[Dict[str, Any]]) -> None:
     agents = list(set(a['agent'] for a in activities))
     phases = list(set(a.get('phase') for a in activities if a.get('phase')))
     
-    print(f"\n📊 Flowchart Summary")
+    print(f"\n[SUMMARY] Flowchart Summary")
     print(f"Activities: {len(activities)}")
     print(f"Agents: {', '.join(sorted(agents))}")
     print(f"Phases: {', '.join(sorted(phases))}")
@@ -156,10 +156,10 @@ def main():
         data = load_activity_log(args.log_file)
         activities = data.get('activities', [])
     except FileNotFoundError:
-        print(f"❌ Log file not found: {args.log_file}")
+        print(f"[ERROR] Log file not found: {args.log_file}")
         return
     except Exception as e:
-        print(f"❌ Error loading log file: {e}")
+        print(f"[ERROR] Error loading log file: {e}")
         return
     
     if not activities:
@@ -183,9 +183,9 @@ def main():
     if args.output:
         with open(args.output, 'w') as f:
             f.write(mermaid_chart)
-        print(f"✅ Flowchart saved to {args.output}")
+        print(f"[OK] Flowchart saved to {args.output}")
     else:
-        print("\n🎯 Mermaid Flowchart:")
+        print("\n[FLOWCHART] Mermaid Flowchart:")
         print("=" * 50)
         print(mermaid_chart)
         print("=" * 50)

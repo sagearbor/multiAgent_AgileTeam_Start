@@ -175,7 +175,7 @@ def log_agent_activity(
     # Save updated log
     save_activity_log(data, log_file)
     
-    print(f"✅ Logged activity: {agent} - {instruction[:50]}...")
+    print(f"[OK] Logged activity: {agent} - {instruction[:50]}...")
     print(f"   Duration: {duration}s, +{lines_added}/-{lines_removed} lines, {files_modified} files")
 
 
@@ -184,7 +184,7 @@ def display_stats(log_file: str) -> None:
     data = load_activity_log(log_file)
     stats = data['statistics']
     
-    print("\n📊 Agent Activity Statistics")
+    print("\n[STATS] Agent Activity Statistics")
     print("=" * 40)
     
     print(f"Total agents run: {stats['totals']['total_agents_run']}")
@@ -193,7 +193,7 @@ def display_stats(log_file: str) -> None:
     print(f"Total lines removed: {stats['totals']['total_lines_removed']}")
     print(f"Unique files touched: {stats['totals']['unique_files_touched']}")
     
-    print("\n📈 Running Average (Last 5 Runs):")
+    print("\n[AVERAGE] Running Average (Last 5 Runs):")
     avg = stats['running_average_last_5']
     print(f"  Files edited: {avg['files_edited']:.1f}")
     print(f"  Lines added: {avg['lines_added']:.1f}")
@@ -201,7 +201,7 @@ def display_stats(log_file: str) -> None:
     print(f"  Cycles included: {avg['cycles_included']}")
     
     if stats['last_run']['timestamp']:
-        print(f"\n🔄 Last Run:")
+        print(f"\n[LAST-RUN] Last Run:")
         last = stats['last_run']
         print(f"  Files edited: {last['files_edited']}")
         print(f"  Lines added: {last['lines_added']}")
@@ -239,7 +239,7 @@ def main():
         return
     
     if not all([args.agent, args.agent_type, args.instruction, args.result, args.duration]):
-        print("❌ Missing required arguments: --agent, --agent-type, --instruction, --result, --duration")
+        print("[ERROR] Missing required arguments: --agent, --agent-type, --instruction, --result, --duration")
         parser.print_help()
         return
     

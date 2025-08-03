@@ -166,7 +166,7 @@ def update_cleanup_stats(tracker: Dict[str, Any], files_edited: int, lines_added
 
 def scan_codebase(tracker_file: str, root_dir: str = '.') -> None:
     """Scan the entire codebase and update tracking file."""
-    print("🔍 Scanning codebase for cleanup tracking...")
+    print("[SCAN] Scanning codebase for cleanup tracking...")
     
     # Load existing tracker
     tracker = load_cleanup_tracker(tracker_file)
@@ -188,7 +188,7 @@ def scan_codebase(tracker_file: str, root_dir: str = '.') -> None:
     for file_path in tracked_files - current_files:
         del tracker['files'][file_path]
         files_removed += 1
-        print(f"🗑️  Removed deleted file: {file_path}")
+        print(f"[REMOVED]  Removed deleted file: {file_path}")
     
     # Add or update existing files
     for file_path in source_files:
@@ -219,7 +219,7 @@ def scan_codebase(tracker_file: str, root_dir: str = '.') -> None:
     # Save updated tracker
     save_cleanup_tracker(tracker, tracker_file)
     
-    print(f"✅ Scan complete!")
+    print(f"[OK] Scan complete!")
     print(f"   Added: {files_added} files")
     print(f"   Updated: {files_updated} files") 
     print(f"   Removed: {files_removed} files")
@@ -231,12 +231,12 @@ def display_cleanup_stats(tracker_file: str) -> None:
     tracker = load_cleanup_tracker(tracker_file)
     metadata = tracker['metadata']
     
-    print("\n🧹 Cleanup Agent Statistics")
+    print("\n[CLEANUP] Cleanup Agent Statistics")
     print("=" * 40)
     
     # Last run stats
     if metadata['last_run']['timestamp']:
-        print("🔄 Last Run:")
+        print("[LAST-RUN] Last Run:")
         last = metadata['last_run']
         print(f"  Files edited: {last['files_edited']}")
         print(f"  Lines added: {last['lines_added']}")
@@ -244,7 +244,7 @@ def display_cleanup_stats(tracker_file: str) -> None:
         print(f"  Timestamp: {last['timestamp']}")
     
     # Running averages
-    print("\n📈 Running Average (Last 5 Cleanup Cycles):")
+    print("\n[AVERAGE] Running Average (Last 5 Cleanup Cycles):")
     avg = metadata['running_average_last_5']
     print(f"  Files edited: {avg['files_edited']:.1f}")
     print(f"  Lines added: {avg['lines_added']:.1f}")
@@ -258,14 +258,14 @@ def display_cleanup_stats(tracker_file: str) -> None:
         status = file_info['status']
         status_counts[status] = status_counts.get(status, 0) + 1
     
-    print(f"\n📁 File Status Summary (Total: {len(files)} files):")
+    print(f"\n[FILES] File Status Summary (Total: {len(files)} files):")
     for status, count in sorted(status_counts.items()):
         print(f"  {status}: {count}")
     
     # Files needing attention
     needs_review = [path for path, info in files.items() if info['status'] in ['pending', 'needs_review']]
     if needs_review:
-        print(f"\n⚠️  Files needing review ({len(needs_review)}):")
+        print(f"\n[WARNING]  Files needing review ({len(needs_review)}):")
         for file_path in needs_review[:10]:  # Show first 10
             info = files[file_path]
             print(f"   {file_path} ({info['size_lines']} lines, complexity: {info['complexity_score']})")

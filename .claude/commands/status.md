@@ -1,4 +1,4 @@
-# 📊 Project Status Check
+# [STATUS] Project Status Check
 
 Get current project status and determine next actions.
 
