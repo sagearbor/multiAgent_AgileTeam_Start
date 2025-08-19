@@ -1,27 +1,24 @@
 {
   "name": "Multi-Agent Development Template",
-  "description": "This template facilitates multi-agent software development. It streamlines workflows with specialized agents.",
+  "description": "A template for multi-agent software development with orchestration capabilities.",
   "technologies": [
     "Claude Code",
     "YAML",
-    "Python",
-    "Git",
-    "CI/CD"
+    "Python"
   ],
   "category": [
-    "automation",
-    "web-app"
+    "library",
+    "automation"
   ],
   "status": "active",
   "language": [
-    "Python",
-    "YAML"
+    "Python"
   ],
   "hosted_url": null,
   "activity": {
     "commits_30d": 1,
     "last_commit": "2025-08-07",
     "contributors": 0,
-    "hotness_score": 32
+    "hotness_score": 22
   }
 }
